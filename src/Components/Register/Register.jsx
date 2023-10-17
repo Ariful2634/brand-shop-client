@@ -2,11 +2,14 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
 
     const [pass,setPass]=useState("")
+    // eslint-disable-next-line no-unused-vars
+    const [valid,setValid]=useState("")
 
     const {createUser}=useContext(AuthContext)
 
@@ -19,32 +22,43 @@ const Register = () => {
         const password = form.password.value
         console.log(name,photo,email,password)
 
-        if(password.length < 6){
+        setPass("")
+
+        if(password.length <6 ){
+            form.reset()
             return setPass("Password should be at least 6 characters or longer")
         }
 
         else if(!/[A-Z]/.test(password)){
-
-            
+            form.reset()
             return setPass("Password should contain at least one uppercase letter")
         }
-        else if(!/[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\\\-]/.test(password)){
-    
-           
+
+        else if(!/[!@#$%^&*()_+{}\\[\]:;<>,.?~\\-]/.test(password) ){
+            form.reset()
             return setPass("Password should contain at least one special  character")
         }
+
+      
 
         createUser(email,password)
         .then(res=>{
             const user = res.user
-            console.log(user)
-            Swal.fire(
+            updateProfile(user,{
+                displayName:name,
+                photoURL:photo
+              })
+              form.reset()
+           
+            setValid(Swal.fire(
                 'Congratulation!',
                 'User Created Successfully!',
                 'success'
-              )
+              ))
         })
         .catch(err=>{
+            setPass(err.message)
+            form.reset()
             console.log(err)
         })
 
@@ -52,14 +66,14 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-base-200 ">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                         
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleRegister} className="card-body">
+                        <form onSubmit={handleRegister} className="card-body w-96">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -85,7 +99,7 @@ const Register = () => {
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                                 <div>
                                     {
-                                        pass && <p className="text-red-600 font-bold">{pass}</p>
+                                        pass && <p className="text-red-400 font-bold">{pass}</p>
                                     }
                                 </div>
                             </div>
