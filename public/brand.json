@@ -1,0 +1,33 @@
+[
+    {
+      "id":1,
+      "image": "https://i.ibb.co/GdLv01X/unnamed.png",
+      "name": "Google"
+    },
+    {
+        "id":2,
+      "image": "https://i.ibb.co/DtwmZxJ/Apple-Logo.webp",
+      "name": "Apple"
+    },
+    {
+        "id":3,
+      "image": "https://i.ibb.co/GsxshX6/samsung-logo1-300x300-e1465307161764.webp",
+      "name": "Samsung"
+    },
+    {
+        "id":4,
+      "image": "https://i.ibb.co/mJfB2LC/sony-black-vector-logo.png",
+      "name": "Sony"
+    },
+    {
+        "id":5,
+      "image": "https://i.ibb.co/DkQcjz6/1669366378341-jpg-1669366377.webp",
+      "name": "Oppo"
+    },
+    {
+        "id":6,
+      "image": "https://i.ibb.co/F0t1Gsv/intel-new-2020-logo-21-ED2748-DD-seeklogo-com.png",
+      "name": "Intel"
+    }
+  ]
+  
