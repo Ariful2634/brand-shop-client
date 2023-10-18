@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,8 @@ const Login = () => {
     // eslint-disable-next-line no-unused-vars
     const [success,setSuccess]=useState("")
     const [error,setError]=useState("")
+    const location= useLocation()
+    const navigate = useNavigate()
 
     const handleLogin = e =>{
         e.preventDefault()
@@ -29,6 +31,7 @@ const Login = () => {
                 'LoggedIn Successfully!',
                 'success'
               ))
+              navigate(location?.state ? location.state : '/')
         })
         .catch(err=>{
             setError(err.message)
@@ -47,6 +50,7 @@ const Login = () => {
                 'LoggedIn Successfully!',
                 'success'
               ))
+              navigate(location?.state ? location.state : '/')
         })
         .catch(error=>{
             console.log(error)

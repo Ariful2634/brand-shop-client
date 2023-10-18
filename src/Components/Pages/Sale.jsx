@@ -4,7 +4,7 @@ import speaker from '../Pages../../../assets/speaker.jpg'
 const Sale = () => {
     return (
         <div>
-            <div className='flex gap-5 mt-32'>
+            <div className='flex lg:flex-row flex-col gap-5 mt-32'>
                 <div >
                 <h2 className='text-center font-bold text-blue-600 italic mt-3 text-2xl'>Winter Sale</h2>
                 <div className='flex items-center shadow-xl p-6'>
