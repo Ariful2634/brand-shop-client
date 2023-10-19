@@ -16,11 +16,13 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ViewProduct from './Components/ViewProduct/ViewProduct';
 import ProductDetails from './Components/ViewProduct/ProductDetails';
 import UpdateProduct from './Components/ViewProduct/UpdateProduct';
+import Error from './Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/updateProduct/:id',
-        element:<UpdateProduct></UpdateProduct>,
+        element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
         loader:()=>fetch('http://localhost:5000/tech')
       }
     ]

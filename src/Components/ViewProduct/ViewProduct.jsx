@@ -30,7 +30,11 @@ const ViewProduct = () => {
                        
                 </div>
                     ):
-                    <h2>No Data Found</h2>
+
+                    <div className="text-center mt-6">
+                        <h1 className="text-4xl font-bold text-red-600 mb-2">Oops!!!</h1>
+                        <h2 className="text-4xl font-bold text-red-600">No Data Found</h2>
+                    </div>
                 }
             </div>
         </div>

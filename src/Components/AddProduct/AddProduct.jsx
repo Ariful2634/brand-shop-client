@@ -15,7 +15,7 @@ const AddProduct = () => {
         const des = form.des.value;
         const rating = form.rating.value;
         const addTech = {image,name,brand,type,price,des,rating}
-        console.log(addTech)
+       
 
         
 
@@ -118,7 +118,7 @@ const AddProduct = () => {
                 </div>
               </div>
               <div>
-                <input className="btn btn-block mt-6 font-bold bg-green-400 " type="submit" value="Add Product" />
+                <input className="btn btn-block mt-6 font-bold text-blue-600 bg-green-400 " type="submit" value="Add Product" />
               </div>
                
             </form>

@@ -9,15 +9,8 @@ const View = ({ brands }) => {
 
     const { _id,image, name, brand, type, price, rating } = brands;
 
-    // if(rating >= 0){
-    //    return setRate(<div className="rating">
-    //     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-    //     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
-    //     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-    //     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-    //     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-    //   </div>)
-    // }
+
+   
 
     return (
         <div className="mt-16">

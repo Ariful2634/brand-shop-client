@@ -6,11 +6,10 @@ const UpdateProduct = () => {
 
     const update = useLoaderData()
    const {id}=useParams()
-    console.log(update)
-    console.log(id)
+   
 
     const value = update.find(data => data._id == id)
-    console.log(value)
+    
 
     const handleUpdate = e =>{
         e.preventDefault()
@@ -22,7 +21,7 @@ const UpdateProduct = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const updateTech = {image,name,brand,type,price,rating}
-        console.log(updateTech)
+      
 
         fetch(`http://localhost:5000/update/${value._id}`,{
             method:"PUT",
@@ -111,8 +110,8 @@ const UpdateProduct = () => {
                     </div>
                 </div>
                 <div>
-                    {/* <button className="btn btn-block mt-6 font-bold bg-green-400 " >Submit</button> */}
-                    <input className="btn btn-block mt-6 font-bold bg-green-400 " type="submit" value="Add Product" />
+                   
+                    <input className="btn btn-block mt-6 font-bold text-blue-600 bg-green-400 " type="submit" value="Update Product" />
                 </div>
 
             </form>
