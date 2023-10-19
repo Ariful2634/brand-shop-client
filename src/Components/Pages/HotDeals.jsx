@@ -22,7 +22,7 @@ const HotDeals = () => {
             </div>
             <div className="mr-20">
                 <img className="w-[300px]  h-[200px]" src={pixel} alt="" />
-                <h2 className='font-bold text-center text-2xl mb-3 mt-3'>Pixel-7</h2>
+                <h2 className='font-bold text-center text-2xl mb-3 mt-3'>Google Pixel-7</h2>
                 <div className='flex gap-4 justify-center mb-3'>
                     <p className='font-bold'>$̶4̶5̶0̶0̶0̶ </p>
                     <p className='font-bold '>$25000</p>
