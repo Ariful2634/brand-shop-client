@@ -5,8 +5,7 @@ const ProductDetails = () => {
 
     const loader = useLoaderData()
     const { id } = useParams()
-    console.log(loader)
-    console.log(id)
+   
 
     const details = loader.find(load => load._id == id)
 

@@ -29,10 +29,10 @@ const View = ({ brands }) => {
                     <p className="font-semibold">Type: {type}</p>
                     <p className="font-semibold">Price: ${price}</p>
                     
-                     {rating}
+                     <p>Rating: {rating}</p>
                     <div className="card-actions justify-between mt-3">
                        <Link to={`/productDetails/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
-                        <button className="btn btn-primary">Update</button>
+                        <Link to={`/updateProduct/${_id}`}><button className="btn btn-primary">Update</button></Link>
                     </div>
                 </div>
             </div>
