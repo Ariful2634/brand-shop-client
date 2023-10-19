@@ -17,6 +17,8 @@ const AddProduct = () => {
         const addTech = {image,name,brand,type,price,des,rating}
         console.log(addTech)
 
+        
+
         fetch('http://localhost:5000/tech',{
             method:"POST",
             headers:{
@@ -36,6 +38,8 @@ const AddProduct = () => {
                   )
             }
         })
+
+        form.reset()
 
     }
 

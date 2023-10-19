@@ -1,14 +1,15 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
 
     const update = useLoaderData()
-   const {_id}=useParams()
+   const {id}=useParams()
     console.log(update)
-    console.log(_id)
+    console.log(id)
 
-    const value = update.find(data => data._id == _id)
+    const value = update.find(data => data._id == id)
     console.log(value)
 
     const handleUpdate = e =>{
@@ -23,7 +24,7 @@ const UpdateProduct = () => {
         const updateTech = {image,name,brand,type,price,rating}
         console.log(updateTech)
 
-        fetch(`http://localhost:5000/tech/${value._id}`,{
+        fetch(`http://localhost:5000/update/${value._id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'
@@ -33,6 +34,13 @@ const UpdateProduct = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.modifiedCount){
+                Swal.fire(
+                    'Congratulations!',
+                    'Product Updated Successfully!',
+                    'success'
+                  )
+            }
         })
 
         
