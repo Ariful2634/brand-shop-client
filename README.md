@@ -1,8 +1,19 @@
-# React + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology And electronics Brand Shop
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* User can create account and login into website
+* User can login with google account
+* User can see the brandwise product on clicking in specific brand
+* User can see the product details
+* User can add products
+* User can update the products
+* User can add to cart a product
+* User can see the add product in my cart
+
+
+# Live link
+
+https://tech-shop-5a579.web.app/
