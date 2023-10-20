@@ -1,13 +1,43 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const ProductDetails = () => {
+    const {user}=useContext(AuthContext)
 
     const loader = useLoaderData()
     const { id } = useParams()
    
 
     const details = loader.find(load => load._id == id)
+    details.email=user.email
+    const mail=details
+
+
+    const handleCart = ()=>{
+       
+
+        fetch('http://localhost:5000/cart',{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(mail)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire(
+                    'Congratulations!',
+                    'Add To Cart Successfully!',
+                    'success'
+                  )
+            }
+        })
+    }
 
     return (
         <div className="flex justify-center">
@@ -20,7 +50,7 @@ const ProductDetails = () => {
                     <p className="font-bold">Price: ${details.price}</p>
                     </div>
                     <div className="card-actions justify-center mt-3">
-                        <button className="btn btn-accent font-bold ">Add To Cart</button>
+                        <button onClick={handleCart} className="btn btn-accent font-bold ">Add To Cart</button>
                     </div>
                 </div>
             </div>
