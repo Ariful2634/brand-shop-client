@@ -28,7 +28,7 @@ const ProductDetails = () => {
     const handleCart = () => {
 
 
-        fetch('http://localhost:5000/cart', {
+        fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/cart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

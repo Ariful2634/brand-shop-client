@@ -44,23 +44,23 @@ const router = createBrowserRouter([
       {
         path:'/viewProduct/:name',
         element:<ViewProduct></ViewProduct>,
-        loader:()=>fetch('http://localhost:5000/tech')
+        loader:()=>fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/tech')
         
       },
       {
         path:'/productDetails/:id',
         element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/tech')
+        loader:()=>fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/tech')
       },
       {
         path:'/updateProduct/:id',
         element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/tech')
+        loader:()=>fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/tech')
       },
       {
         path:'/cart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/cart')
+        loader:()=>fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/cart')
         
       }
     ]

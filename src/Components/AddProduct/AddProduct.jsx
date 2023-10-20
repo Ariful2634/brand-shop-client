@@ -19,7 +19,7 @@ const AddProduct = () => {
 
         
 
-        fetch('http://localhost:5000/tech',{
+        fetch('https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/tech',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

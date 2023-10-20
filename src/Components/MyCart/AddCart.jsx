@@ -21,7 +21,7 @@ const AddCart = ({load,deleted,setDeleted}) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${id}`,{
+                fetch(`https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/cart/${id}`,{
                     method:"DELETE"
                 })
                 .then(res=>res.json())
@@ -46,8 +46,8 @@ const AddCart = ({load,deleted,setDeleted}) => {
 
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img className="w-[250px]" src={image} /></figure>
+            <div className="card card-side  bg-base-100 shadow-xl">
+                <figure><img className="w-[250px] h-[300px]" src={image} /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className="font-semibold">Brand: {brand}</p>

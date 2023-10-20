@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         const updateTech = {image,name,brand,type,price,rating}
       
 
-        fetch(`http://localhost:5000/update/${value._id}`,{
+        fetch(`https://technology-and-electronics-brand-shop-server-4mhlcw7xz.vercel.app/update/${value._id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'
