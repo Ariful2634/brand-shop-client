@@ -5,38 +5,47 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const ProductDetails = () => {
-    const {user}=useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const loader = useLoaderData()
     const { id } = useParams()
-   
+
 
     const details = loader.find(load => load._id == id)
-    details.email=user.email
-    const mail=details
+    details.email = user.email
+    const mail = {
+        email: user.email,
+        image: details.image,
+        name: details.name,
+        brand: details.brand,
+        type: details.type,
+        price: details.price,
+        rating: details.rating,
+
+    }
 
 
-    const handleCart = ()=>{
-       
+    const handleCart = () => {
 
-        fetch('http://localhost:5000/cart',{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
+
+        fetch('http://localhost:5000/cart', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(mail)
+            body: JSON.stringify(mail)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire(
-                    'Congratulations!',
-                    'Add To Cart Successfully!',
-                    'success'
-                  )
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Congratulations!',
+                        'Add To Cart Successfully!',
+                        'success'
+                    )
+                }
+            })
     }
 
     return (
@@ -45,9 +54,9 @@ const ProductDetails = () => {
                 <figure><img className="h-[300px]" src={details.image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div className="text-center space-y-3">
-                    <h2 className="card-title text-2xl flex justify-center text-blue-700">{details.name}</h2>
-                    <p className="font-semibold">{details.des}</p>
-                    <p className="font-bold">Price: ${details.price}</p>
+                        <h2 className="card-title text-2xl flex justify-center text-blue-700">{details.name}</h2>
+                        <p className="font-semibold">{details.des}</p>
+                        <p className="font-bold">Price: ${details.price}</p>
                     </div>
                     <div className="card-actions justify-center mt-3">
                         <button onClick={handleCart} className="btn btn-accent font-bold ">Add To Cart</button>

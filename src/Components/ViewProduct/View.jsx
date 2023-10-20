@@ -2,6 +2,8 @@
 
 // import { useState } from "react";
 import { Link } from "react-router-dom";
+import {  FaStar } from 'react-icons/fa';
+
 
 
 const View = ({ brands }) => {
@@ -22,7 +24,7 @@ const View = ({ brands }) => {
                     <p className="font-semibold">Type: {type}</p>
                     <p className="font-semibold">Price: ${price}</p>
                     
-                     <p className="font-semibold">Rating: {rating}</p>
+                     <p  className="font-semibold flex item-center">Rating: {rating} <span className="mt-1 ml-1"><FaStar></FaStar></span></p>
                     <div className="card-actions justify-between mt-3">
                        <Link to={`/productDetails/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
                         <Link to={`/updateProduct/${_id}`}><button className="btn btn-primary">Update</button></Link>
