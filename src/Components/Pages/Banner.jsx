@@ -1,12 +1,31 @@
-
+import banner from '../../assets/ban.jpg'
+// import banner2 from '../../assets/ban2.jpg'
 
 const Banner = () => {
     return (
-        <div className="bg-[url('https://i.ibb.co/BVQHF70/06d50a103854047-5f5669a16b9db.jpg')] bg-center  lg:bg-cover md:bg-cover bg-no-repeat bg-contain md:h-[350px] h-[230px] lg:h-[520px] w-full lg:mt-4">
+        <div className="flex justify-center mt-8">
+
             
-            <h2 className="lg:text-5xl md:text-4xl md:text-center text-3xl ml-3 lg:text-center text-pink-400 italic mr-10 py-4 font-bold">Welcome To Gadget World</h2>
-           
+
+            <div className="diff aspect-[16/9] max-w-7xl mx-auto">
+                <div className="diff-item-1">
+                    <img className='rounded-xl' src={banner} />
+                </div>
+                <div className="diff-item-2">
+                    {/* <img className='rounded-xl' src={banner2} /> */}
+                </div>
+                <div className="diff-resizer"></div>
+            </div>
+
+
+
+
         </div>
+
+
+
+
+
     );
 };
 
