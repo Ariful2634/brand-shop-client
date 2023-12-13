@@ -13,6 +13,8 @@
 * User can add to cart a product
 * User can see the add product in my cart
 
+# Technology Used
+Reactjs, Tailwind CSS, Daisy UI, MongoDB, Firebase etc.
 
 # Live link
 
